@@ -4,9 +4,11 @@ export const FOLDERS = Object.freeze(['', 'Images', 'Documents', 'Other', 'Work'
 export const DEFAULT_APPEARANCE = Object.freeze({ theme: 'paper', accent: 'rust', density: 'comfortable' });
 
 export function appearance(value = {}) {
-  return { theme: ['paper', 'mint', 'night'].includes(value?.theme) ? value.theme : 'paper',
-    accent: ['rust', 'blue', 'berry'].includes(value?.accent) ? value.accent : 'rust',
-    density: ['comfortable', 'compact'].includes(value?.density) ? value.density : 'comfortable' };
+  const result = { ...DEFAULT_APPEARANCE };
+  if (['paper', 'mint', 'night'].includes(value?.theme)) result.theme = value.theme;
+  if (['rust', 'blue', 'berry'].includes(value?.accent)) result.accent = value.accent;
+  if (['comfortable', 'compact'].includes(value?.density)) result.density = value.density;
+  return result;
 }
 
 export function moveItem(items, id, direction) {

@@ -41,6 +41,20 @@ export function validateFiles(existing, incoming) {
   return '';
 }
 
+function plannedStem(item, originalStem, subject, student, number, naming) {
+  if (item.customName) return cleanStem(item.customName);
+  if (naming === 'keep') return cleanStem(originalStem);
+  return cleanStem([subject, student, String(number).padStart(2, '0')].filter(Boolean).join('-'));
+}
+
+function plannedFolder(item, blob, extension, group) {
+  if (item.folder === 'root') return '';
+  const folders = ['Images', 'Documents', 'Other', 'Work', 'References', 'Extras'];
+  if (folders.includes(item.folder)) return `${item.folder}/`;
+  if (group) return `${category(blob, extension)}/`;
+  return '';
+}
+
 export function planFiles(items, options = {}) {
   const subject = cleanStem(options.subject || 'assignment').toLowerCase();
   const student = options.student?.trim() ? cleanStem(options.student).toLowerCase() : '';
@@ -51,11 +65,8 @@ export function planFiles(items, options = {}) {
     const parts = fileParts(item.file.name);
     const extension = item.prepared?.extension ?? parts.extension;
     const blob = item.prepared?.blob ?? item.file;
-    const stem = cleanStem(item.customName || (options.naming === 'keep'
-      ? parts.stem
-      : [subject, student, String(index + 1).padStart(2, '0')].filter(Boolean).join('-')));
-    const customFolder = ['Images', 'Documents', 'Other', 'Work', 'References', 'Extras'].includes(item.folder) ? item.folder : '';
-    const folder = item.folder === 'root' ? '' : customFolder ? `${customFolder}/` : options.group ? `${category(blob, extension)}/` : '';
+    const stem = plannedStem(item, parts.stem, subject, student, index + 1, options.naming);
+    const folder = plannedFolder(item, blob, extension, options.group);
     const suffix = extension ? `.${extension}` : '';
     let filename = `${stem}${suffix}`;
     let path = `${folder}${filename}`;

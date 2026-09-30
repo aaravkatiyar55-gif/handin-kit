@@ -81,3 +81,11 @@ A subsequent tracker sync showed the exact linked total **3h 17m 2s**. The compo
 The earlier time shortfall is resolved. Source, public runtime, README, screenshots, declaration and devlogs are present. Continuing the owner's earlier explicit Ship request, **Ship #1 was submitted once**. The platform returned “Your project has been submitted for review” and shows **Pending review** and **Pending mission review**. The Ship form accepted two native screenshots; the devlog retains four and the README five. Final Ship and Edit project controls became disabled. No reviewer approval or reward is claimed.
 
 The post-ship notice says at least 18 votes on other projects are required for payout. No voting batch was performed as part of this documentation/Ship work; the observed balance remained 33. The separate tracker-key rotation remains owner-unconfirmed. Final pre-submission checks and deployment passed for `79e0ce3` in run 36694549584.
+
+## Readability and returned review — 1 October 2026
+
+The current software status is **Changes requested**, and the Frictionless mission is **returned**. The reviewer requires a self-written README and human code contribution; full feedback and the unresolved authorship requirement are recorded in [REVIEW_STATUS.md](docs/REVIEW_STATUS.md). The earlier pending-review observations are historical.
+
+The concise README keeps setup, a sample walkthrough, privacy/pack limits and the AI disclosure. The longer guide and screenshot gallery were preserved in `docs/GUIDE.md`. `src/core.js` separates stem and folder selection into named helpers; `src/workbench.js` spells out appearance defaults. All 21 existing behavior tests and 13 syntax checks pass after the refactor, and the production build contains eleven files. These are Codex-assisted improvements, not a claim to have met the self-written requirement.
+
+The production build on port 4192 also passed a fresh Chrome UI check: Lab record applied the 8 MiB budget and CSV setting; the fictional three-file pack met its image/document checklist. Giving both scans `अभ्यास` and choosing References produced `References/अभ्यास.png` and `References/अभ्यास-2.png`, while the Hindi subject stayed in the notes filename. Night ink rendered after selection. The README keeps the Assistance and older gallery anchors so existing source links still have a destination.

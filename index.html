@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f2e9">
+  <meta name="description" content="Rename assignment attachments, make smaller scan images and pack a tidy ZIP. Files stay in your browser.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' blob: data:; connect-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <title>Hand-in Kit — a little order for your attachments</title>
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./src/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#workbench">Skip to the workbench</a>
+  <header class="site-header wrap">
+    <a class="brand" href="./" aria-label="Hand-in Kit home"><img src="./icon.svg" width="35" height="35" alt="">Hand-in Kit<span>ATTACHMENT WORKBENCH</span></a>
+    <nav aria-label="Main navigation"><a href="#guide">How it works</a><a href="https://github.com/aaravkatiyar55-gif/handin-kit" target="_blank" rel="noopener noreferrer">Source ↗</a></nav>
+  </header>
+  <main class="wrap">
+    <section class="intro" aria-labelledby="intro-title">
+      <div><p class="eyebrow"><span class="small-line"></span> FOR THE LAST STEP BEFORE SEND</p><h1 id="intro-title">A little order for<br><em>your attachments.</em></h1><p class="intro-copy">The files are ready. Their names probably aren’t.<br>Turn a mixed folder into a hand-in that makes sense.</p></div>
+      <ol class="intro-steps" aria-label="Three things this kit does"><li><span>01</span><div><strong>Name the batch</strong><p>Clear names. No accidental overwrites.</p></div></li><li><span>02</span><div><strong>Lighten the scans</strong><p>Smaller image copies. Originals kept.</p></div></li><li><span>03</span><div><strong>Pack it neatly</strong><p>One ZIP, with a useful attachment note.</p></div></li></ol>
+    </section>
+    <div class="privacy-strip"><span class="privacy-dot" aria-hidden="true"></span><strong>No upload. No account.</strong><span>Files stay in this tab. Reloading clears the pack; a downloaded ZIP stays on your device.</span></div>
+    <section id="workbench" class="workbench" aria-label="Attachment workbench">
+      <aside class="controls">
+        <section class="control-section"><h2><span class="step">01</span> Bring the files</h2>
+          <input id="file-input" type="file" multiple hidden>
+          <label class="dropzone" id="dropzone" for="file-input" tabindex="0" role="button" aria-label="Choose files, or drop them here"><svg viewBox="0 0 48 42" width="48" height="42" aria-hidden="true"><path d="M4 11h15l5 6h20v20H4z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M24 3v20m-7-7 7 7 7-7" fill="none" stroke="currentColor" stroke-width="2"/></svg><strong>Drop files here</strong><span>or choose from your device</span></label>
+          <p class="fine-print">Up to 40 files · 25 MB each · 80 MB total.<br>You can also paste an image from the clipboard.</p>
+          <button id="demo" class="button secondary full">Try sample files <span aria-hidden="true">↗</span></button>
+          <p id="sample-label" class="sample-label" hidden>FICTIONAL DEMO FILES · NOT YOUR DOCUMENTS</p>
+        </section>
+        <section class="control-section"><h2><span class="step">02</span> Set the labels</h2>
+          <label class="field" for="subject">Subject or pack name<input id="subject" type="text" maxlength="60" value="Science" autocomplete="off" spellcheck="false"></label>
+          <label class="field" for="student">Name / roll number <span class="optional">optional</span><input id="student" type="text" maxlength="60" placeholder="e.g. 10B-07" autocomplete="off" spellcheck="false"></label>
+          <label class="field" for="naming">Filename style<select id="naming"><option value="number">Subject · name · number</option><option value="keep">Keep original names, tidy safely</option></select></label>
+          <label class="field" for="order">Number files in<select id="order"><option value="picked">The order I added them</option><option value="name">Original filename order</option></select></label>
+          <label class="check"><input id="group" type="checkbox" checked> Group images, documents and other files</label>
+        </section>
+        <section class="control-section"><h2><span class="step">03</span> Lighten the scans</h2>
+          <div class="two-fields"><label class="field" for="target">Aim per image<select id="target"><option value="150">150 KB</option><option value="300">300 KB</option><option value="500">500 KB</option><option value="1000">1 MB</option></select></label><label class="field" for="edge">Longest edge<select id="edge"><option value="1600">1,600 px</option><option value="1200">1,200 px</option><option value="2000">2,000 px</option></select></label></div>
+          <button id="optimise" class="button dark full" disabled>Make smaller image copies</button>
+          <button id="restore" class="quiet-button full" disabled>Restore original images</button>
+          <p class="fine-print">JPEG, PNG and WebP only. Copies become JPEG; transparency becomes white. PDFs, GIFs and other files stay unchanged. Check small writing before sending.</p>
+        </section>
+      </aside>
+      <div class="pack-board">
+        <div class="board-top"><div><p class="eyebrow">YOUR PACK, BEFORE YOU DOWNLOAD</p><h2>Nothing leaves until you say so.</h2></div><span id="count" class="count">0 files</span></div>
+        <div id="empty" class="empty-state"><div class="paper-stack" aria-hidden="true"><div class="paper back"><span>IMG_2026…</span><i></i><i></i><i></i></div><div class="paper front"><span>science-01.jpg</span><i></i><i></i><i></i><b>READY TO HAND IN</b></div></div><h3>Start with a small pile.</h3><p>Add your PDFs, photos or notes.<br>You’ll see every new name before packing.</p><span class="empty-tip">Nothing is changed on your device.</span></div>
+        <div id="list-area" hidden><div class="list-heading"><span>ORIGINAL → PACK NAME</span><span>SIZE</span></div><ul id="file-list" class="file-list" aria-label="Files in your pack"></ul></div>
+        <div class="pack-totals"><div><span>Original</span><strong id="original-size">0 B</strong></div><span class="total-arrow" aria-hidden="true">→</span><div><span>Prepared files</span><strong id="prepared-size">0 B</strong></div><div class="saving"><span id="saving-label">No files yet</span><strong id="saving">—</strong></div></div>
+        <div class="board-actions"><button id="undo" class="quiet-button" disabled>Undo remove</button><button id="clear" class="quiet-button" disabled>Clear pack</button></div>
+        <div id="status" class="status" role="status" aria-live="polite">Ready when you are. Try the sample files for a quick walkthrough.</div>
+        <div class="finish"><div><p class="eyebrow">THE HAND-IN</p><h3>One neat attachment.</h3><label class="check"><input id="include-index" type="checkbox"> Include a CSV index with original filenames</label><p class="fine-print">A plain-text attachment note is always included. ZIP adds a little overhead; it does not compress PDFs.</p></div><button id="download" class="button primary" disabled>Download the ZIP <span aria-hidden="true">↓</span></button><button id="cancel" class="button secondary" hidden>Cancel</button></div>
+        <section class="message-box" aria-labelledby="message-title"><div><h3 id="message-title">A message you can edit</h3><button id="copy" class="quiet-button" disabled>Copy text</button></div><textarea id="message" aria-label="Suggested hand-in message" rows="3" placeholder="Your attachment message will appear here." readonly></textarea><p class="fine-print">This tool never sends the message. Check the contents, then send it yourself.</p></section>
+      </div>
+    </section>
+    <section id="guide" class="guide" aria-labelledby="guide-title"><div><p class="eyebrow">SMALL DETAILS THAT MATTER</p><h2 id="guide-title">Before pressing send.</h2></div><div><h3>Names that travel well</h3><p>Numbering follows the order you choose. Duplicate names get a suffix, and each filename can be adjusted in the preview.</p></div><div><h3>Copies, never replacements</h3><p>Image processing happens on this device. The kit keeps your originals in memory so you can restore them before downloading.</p></div><div><h3>Read it once</h3><p>Size targets are best effort. Open the resulting attachments and check small text, page order and the recipient’s requirements.</p></div></section>
+  </main>
+  <footer class="wrap"><span>Hand-in Kit · a quieter last step.</span><span id="offline-status">Local processing · no analytics</span><a href="https://github.com/aaravkatiyar55-gif/handin-kit#assistance" target="_blank" rel="noopener noreferrer">Build notes ↗</a></footer>
+  <noscript><p class="wrap">JavaScript is needed for local filename planning, image processing and ZIP creation. No files are uploaded.</p></noscript>
+</body>
+</html>

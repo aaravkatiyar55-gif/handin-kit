@@ -1,6 +1,6 @@
 import { mkdir, copyFile, readFile, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
-export const publicFiles = ['index.html', 'styles.css', 'icon.svg', 'manifest.webmanifest', 'sw.js', 'src/app.js', 'src/core.js', 'src/images.js', 'src/zip.js'];
+export const publicFiles = ['index.html', 'styles.css', 'icon.svg', 'manifest.webmanifest', 'sw.js', 'src/app.js', 'src/core.js', 'src/images.js', 'src/zip.js', 'src/recipes.js', 'src/workbench.js'];
 for (const file of publicFiles) {
   await mkdir(`dist/${file.split('/').slice(0, -1).join('/')}`, { recursive: true });
   await copyFile(file, `dist/${file}`);

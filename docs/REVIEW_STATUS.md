@@ -19,4 +19,4 @@ The mission's separate feedback says the ship was not certified and refers to th
 
 These changes were made with Codex. They improve documentation and maintainability; they do **not** turn the project into self-written work or satisfy the reviewer's human-authorship requirement. No deliberate mistakes were added. Request re-certification/re-review has not been clicked.
 
-The current feed has two earlier devlogs with 2h 42m 13s and 19m 46s, totalling 3h 1m 59s logged. That time belongs only to Hand-in Kit. Reviewer acceptance and payout remain unverified.
+The two existing devlogs were shortened and saved on 1 October. Their original 2h 42m 13s and 19m 46s durations and five total images were retained; they total 3h 1m 59s logged. The exact edited writing is in [DEVLOG_RECORD.md](DEVLOG_RECORD.md). The new-post composer offered 14 minutes and required at least 15, so no additional post was created. Ship still opens the Changes requested panel. That time belongs only to Hand-in Kit. Reviewer acceptance and payout remain unverified.

@@ -37,7 +37,7 @@ The first Actions run reached Pages configuration before the new repository had 
 
 The public root, app module and service worker returned HTTP 200. The live Pages app generated the sample files, reduced them to 292 KB, then restored the original 2.5 MB pack. Copy showed its success status. A production ZIP download without the optional CSV completed at 2,671,487 bytes, observed through browser download events.
 
-Stardance project [66961](https://stardance.hackclub.com/projects/66961) was created under Frictionless with a real app screenshot, source/demo URLs and an explicit AI declaration. It shows zero hours; Post a devlog and Ship are disabled. The tracker list has no Hand-in Kit record. No unrelated time was linked. No Hackatime hours, reviewer approval or Stardust payout are inferred from these tests.
+Stardance project [66961](https://stardance.hackclub.com/projects/66961) was created under Frictionless with a real app screenshot, source/demo URLs and an explicit AI declaration. At initial registration it showed zero hours and no matching tracker record. The workspace-edition check below supersedes that initial state. No unrelated time was linked; reviewer approval and Stardust payout are not inferred from tests.
 
 ## Workspace edition browser checks
 
@@ -64,4 +64,8 @@ The source server now bypasses its offline cache on port 4190, so ordinary edits
 
 Storage-full fallback, malformed previously stored recipes, every custom edit/delete flow, non-sample JPEG/WebP conversions and the large-header limits have not all been exercised in the browser. Recipe/schema/image-header behavior has automated coverage; browser storage failure handling is source-checked. No complete cross-browser or accessibility certification is claimed.
 
-VS Code 1.139.1 and official `hackatime.hackatime-time-tracker@30.2.2004` are installed, with the `handin-kit` folder open. Native VS Code controls are unavailable to this agent session; source edits/tests used code tools and browser checks used the in-app browser. This is not a manual-editor-operation or accepted-45-minute claim. The existing tracker credential exposure from an earlier status diagnostic still requires owner rotation; it was never added to this repository.
+The workspace edition deployed successfully in [run 36690139249](https://github.com/aaravkatiyar55-gif/handin-kit/actions/runs/36690139249), source `db7e237`. Public-site checks confirmed Lab record application, night/blue appearance, sample optimisation to 583 KB and original/prepared preview. Clearing only saved settings reset appearance while preserving all three current attachments.
+
+The refreshed Stardance picker exposed `handin-kit` with **2h 42m 13s**. Only that matching record was linked. A factual [devlog](https://stardance.hackclub.com/projects/66961/devlogs/63161) was posted once; refresh confirmed one devlog and the exact attributed duration. The project's whole-hour display rounds this to `3`, but the ship form explicitly requires **Minimum 3 hours spent**. Final submission was not made: the exact recorded duration is 17m 47s short. No review or reward is claimed.
+
+VS Code 1.139.1 and official `hackatime.hackatime-time-tracker@30.2.2004` are installed, with the `handin-kit` folder open. Native VS Code controls are unavailable to this agent session; source edits/tests used code tools and browser checks used the in-app browser. The platform-recorded total exceeds the requested 45-minute minimum, but this is not proof of manual editor typing or an independent audit of every event. The existing tracker credential exposure from an earlier status diagnostic still requires owner rotation; it was never added to this repository.

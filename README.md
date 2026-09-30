@@ -1,57 +1,89 @@
 # Hand-in Kit
 
-The assignment is done. The attachments still have names like `IMG_20260930.png`, and two scans are much bigger than they need to be.
+A small browser tool for the attachments you are about to send.
 
-Hand-in Kit takes care of that last bit: name a batch, make smaller image copies, and download one organised ZIP. The workspace edition adds reusable recipes, file checks and a desk you can customize. There is no account, file upload or backend.
+A folder of scans can be awkward to hand in: repeated camera filenames, pages in the wrong order, and images that are much larger than necessary. Hand-in Kit gives you a place to sort that out. Add the files, check their new names, make lighter copies of the scans, and download one organised ZIP.
 
-[Open the kit](https://aaravkatiyar55-gif.github.io/handin-kit/)
+[Try it here](https://aaravkatiyar55-gif.github.io/handin-kit/) · [Development notes](https://stardance.hackclub.com/projects/66961/devlogs/63161)
 
-## A quick walkthrough
+![Hand-in Kit workspace and appearance controls](docs/screenshots/workspace.jpg)
 
-1. Pick a recipe from **Start with** or browse the free recipe marketplace. Choose files, drop them onto the workbench, or paste an image while outside a text field. **Try sample files** creates fictional files on your device.
-2. Add a subject and, optionally, a name or roll number. Adjust individual names, use the arrows for order, and choose a folder for any file. The destination updates before anything is downloaded.
-3. Use **Make smaller image copies** for JPEG, PNG and WebP scans. Open **Preview** to compare the original and JPEG, including a full-size view for small writing. **Restore original images** undoes the conversion inside this pack.
-4. Check the ZIP budget and recipe checklist. Missing files or an exceeded budget are warnings, not a promise that a recipient will accept the pack. Download the ZIP with its attachment note. A CSV index with original filenames is optional; some recipes turn it on.
-5. Edit the suggested message if needed. Your edited text survives file and settings changes until **Reset suggestion**. The app never sends it.
-6. Save your settings as a custom recipe, or export/import a small recipe JSON file for use in another browser. Select a theme, accent and spacing to make the workspace comfortable.
+No sign-up or API key is needed. File processing happens in your browser, and the files on your device stay unchanged.
 
-These are the three main quality-of-life improvements: safer batch naming, lighter scans, and a single portable hand-in. Unlike QueueClear, this project works on attachments rather than planning tasks.
+## Try a pack in a minute
 
-## Twelve additions in the workspace edition
+Click **Try sample files** to start with two fictional scans and a notes file. They are made on your device; there are no real student records in the demo.
 
-| Tool | What you can actually do |
+1. Choose **Lab record** from **Start with**. It asks for two images and a document, sets an 8 MB ZIP budget, and includes a CSV index.
+2. Enter a subject. For example, `विज्ञान अभ्यास` produces names such as `Images/विज्ञान-अभ्यास-01.jpg` after image conversion. You can also change each name yourself.
+3. Click **Make smaller image copies**, then open **Preview**. Compare the copy with the original and inspect the writing at full size.
+4. Check the file order, checklist and ZIP size. Download the pack, open it, and review the attachments before sending.
+5. Adjust the suggested message if you want. It keeps your wording while you change the pack; **Reset suggestion** generates a new suggestion.
+
+For your own work, use the file picker, drag files onto the workbench, or paste an image while you are outside a text field. Nothing is sent automatically.
+
+## What changed in version 2
+
+The first version covered naming, smaller scan copies and ZIP packing. The workspace update makes those steps easier to repeat and gives you more control over what goes into the pack.
+
+| Addition | How it helps |
 | --- | --- |
-| Free recipe marketplace | Search seven built-in setups by text or category and apply their settings |
-| Custom recipe editor | Save up to 20 setups, give them a useful description and edit their checklist |
-| Recipe import/export | Share a validated, versioned JSON file of settings; no attachments or workbench identity fields |
-| Workspace appearance | Choose warm paper, mint or night ink, three accents and comfortable/compact spacing |
-| Exact duplicate finder | Compare original file bytes with SHA-256, remove extra copies and undo that batch |
-| Attachment preview | Compare original/prepared scans, inspect full size and read a bounded text preview |
-| Manual file ordering | Move a file up or down; numbered names follow the new order |
-| Per-file folders | Route a file to Work, References, Extras, a type folder or the pack root |
-| ZIP budget | See the exact store-only ZIP byte total, including paths, the note and optional CSV |
-| Recipe checklist | Spot missing file types/counts; PDF checks use filenames, not contents |
-| Editable hand-in message | Keep your own wording while making other changes; reset to the current suggestion when wanted |
-| Pack report | Download JSON listing destinations, original/prepared sizes and checklist results |
+| Recipe marketplace | Browse seven free starting setups, or narrow them by search and category. |
+| Custom recipes | Save up to 20 setups with a name, description and file checklist. Edit them when your routine changes. |
+| Recipe import and export | Move a setup to another browser as a small JSON file. It contains settings, not your attachments or the workbench's name fields. |
+| Appearance controls | Choose warm paper, mint desk or night ink, with three accent colours and two spacing options. |
+| Exact duplicate check | Find files with identical original bytes. Remove the extra copies from the pack and undo the removal if needed. |
+| Attachment preview | Compare an original scan and its JPEG copy side by side. Text files have a size-limited preview too. |
+| File ordering | Move files up or down so numbered names follow the order you want. Original-name sorting is also available. |
+| Folder choices | Put an individual file in Work, References, Extras, a type folder, or the ZIP's root. |
+| ZIP budget | See the archive size, including the note and optional index, before downloading. Going over budget shows a warning. |
+| File checklist | See whether the pack contains the types and counts your chosen recipe asks for. |
+| Editable message | Keep your own hand-in wording while renaming or rearranging files. Copy it when you are ready. |
+| Pack report | Download a JSON list of filenames, destinations, sizes and checklist results. |
 
-File search/type filters help with a busy pack. They only change the visible list: every file in the pack still goes into the ZIP. Recipes are local starting points, not published by a community or approved by recipients. All are free; there are no sales, accounts or public uploads.
+A **recipe** is just a reusable set of settings and file checks. The marketplace is a local catalogue of examples; it has no payments, public uploads or community sellers. You can start with a built-in recipe and save an adjusted copy.
 
-## The small print that actually matters
+File search and type filters only change what you see in the list. Hidden rows still go into the ZIP. Duplicate detection compares bytes, so two similar-looking photos are not necessarily duplicates.
 
-- Originals on your device are never renamed or replaced. A reload clears the working pack. Downloaded ZIPs remain on your device.
-- Up to 40 files, 25 MiB per file and 80 MiB per pack. An oversized selection is rejected as a whole.
-- Image copies are JPEG. Transparent areas become white; metadata is not copied through the canvas. Images above 24 megapixels are kept unchanged. Size targets are best effort, not a promise.
-- PDFs, GIFs, HEIC images and other files are packed unchanged. This is not a PDF compressor. ZIP uses the stored format and adds some overhead.
-- Hindi names are preserved. Unsafe filename characters are cleaned; duplicate paths get a suffix. The optional CSV neutralises filenames that could become spreadsheet formulas.
-- The first visit loads public app files from the host. File contents stay in browser memory; there is no analytics or remote processing. A service worker caches the app code for later offline visits, never your chosen files.
-- Only appearance and recipes you explicitly save persist in this browser under one Hand-in Kit storage key. The workbench's subject/name fields, attachments and edited message are not saved. **What is saved on this device?** lets you clear this app's preferences without touching the pack or other sites.
-- Recipe imports are limited to 32 KB and validated against supported settings. Unknown properties are dropped; imported text is rendered as text. Exporting a pack report includes original filenames, so review it before sharing.
-- Duplicate matching means byte-for-byte equality of originals. Similar-looking images or different file encodings are not duplicates. Removing a copy affects this pack only, and Undo checks the pack limits before restoring it.
-- Use a modern browser with JavaScript. Image processing depends on `createImageBitmap` and canvas JPEG support. A failed conversion keeps that original and lets the rest of the pack work.
+## A closer look
 
-## Run it locally
+These screenshots are from the public app. The scans shown are fictional demo files.
 
-Install Node.js 22 or newer, clone this repository, and open a terminal in it. There are no package dependencies or API keys to install.
+### Recipes and reusable settings
+
+![Free recipe marketplace with search and categories](docs/screenshots/marketplace.jpg)
+
+![Custom recipe editor with editable file requirements](docs/screenshots/recipe-editor.jpg)
+
+### Review the pack before sending
+
+![Fictional sample pack with Hindi filenames and size checks](docs/screenshots/pack.jpg)
+
+![Original and prepared scan displayed side by side](docs/screenshots/comparison.jpg)
+
+## A few limits to keep in mind
+
+**Check the writing after conversion.** JPEG, PNG and WebP images can become smaller JPEG copies. Transparent areas become white, and image metadata is not carried through the canvas. Size targets are best effort. Very large images above 24 megapixels and images that fail conversion are kept unchanged.
+
+**PDFs are kept as they are.** PDFs, GIFs, HEIC images and other files can go into the pack, but this tool does not compress them. The ZIP uses the stored format, so it adds a little overhead rather than reducing those files.
+
+**The checklist checks types and counts.** It cannot tell whether a document is complete, a scan is readable, or a recipient will accept it. A PDF check uses the filename extension, not the contents.
+
+**The pack has limits.** You can add up to 40 files, with a maximum of 25 MiB per file and 80 MiB in total. An oversized selection is rejected as a whole. Recipe imports are limited to 32 KB and supported settings; unknown properties are discarded.
+
+**Names are cleaned before packing.** Hindi text is preserved, unsafe filename characters are replaced, and repeated paths get a suffix. The optional CSV index also protects against filenames being interpreted as spreadsheet formulas.
+
+## What stays on your device
+
+Attachments, subject/name fields and your message stay in this tab. Reloading clears that working pack. A downloaded ZIP stays on your device, and the original files are never renamed or replaced.
+
+Appearance and recipes you explicitly save are stored in this browser. Open **What is saved on this device?** to clear this app's saved preferences. That leaves the current attachments and other sites' data alone.
+
+The first visit downloads the app's public files from GitHub Pages. The app can then cache its code for offline use; it does not cache your chosen attachments. There is no analytics service or remote file processing. A pack report includes original filenames, so check it before sharing it.
+
+## Run the source locally
+
+You need Node.js 22 or newer. There are no runtime packages, accounts or keys to configure.
 
 ```sh
 git clone https://github.com/aaravkatiyar55-gif/handin-kit.git
@@ -59,7 +91,9 @@ cd handin-kit
 npm start
 ```
 
-Open `http://127.0.0.1:4190`. The direct equivalent is `node scripts/serve.mjs`.
+Open `http://127.0.0.1:4190`. If you prefer running the script directly, use `node scripts/serve.mjs`.
+
+To check the source and try the production build:
 
 ```sh
 npm test
@@ -68,37 +102,43 @@ npm run build
 node scripts/serve.mjs --dist --port 4191
 ```
 
-The build copies only eleven public app files into `dist/` and stamps the offline cache with a content hash. Serve `dist/` over HTTPS for service workers in production. Relative links support a project subdirectory such as `/handin-kit/`. The source server on port 4190 bypasses the app's offline cache so edits stay visible; test offline behavior with the build on port 4191.
+Open `http://127.0.0.1:4191` for the built app. The source server on port 4190 skips the offline cache so saved code changes stay visible. Use the build server or HTTPS deployment when checking offline behaviour.
 
-GitHub Pages publication is in `.github/workflows/pages.yml`: syntax checks, Node tests, build, then deployment. Set the repository's Pages source to **GitHub Actions**. Workflow actions are pinned to verified official commits. No deploy secret is needed. Pull requests run checks without deploying.
+The latest validation covers 21 automated tests, 13 JavaScript syntax checks and the eleven-file public build. Browser checks covered recipes, duplicate removal/undo, Hindi names, previews, downloads, mobile/tablet layouts and offline reloads. Full observations and remaining gaps are in [TESTING.md](TESTING.md).
 
-For an independent ZIP reader check, Python 3 is optional:
+Python 3 is optional if you want a separate ZIP reader check:
 
 ```sh
 node scripts/zip-fixture.mjs
 python test/read_zip.py
 ```
 
-## Find your way around
+## Where to make changes
 
-| File | What it does |
+The app uses HTML, CSS and JavaScript modules without a framework or backend.
+
+| File | Start here for |
 | --- | --- |
-| `index.html`, `styles.css` | Page structure, keyboard labels and responsive paper-and-ink layout |
-| `src/app.js` | File picker, pack state, previews, undo and downloads |
-| `src/core.js` | Naming, limits, notes and CSV index |
-| `src/images.js` | Local scan conversion and fictional demo files |
-| `src/zip.js` | UTF-8 ZIP writer with CRC32 and cancellation |
-| `src/recipes.js` | Built-in setups, bounded recipe validation, search and count checks |
-| `src/workbench.js` | Exact ZIP budgeting, duplicate checks, routing choices and report data |
-| `sw.js` | Offline public-asset cache |
-| `test/` | Naming and ZIP edge cases; optional Python reader check |
+| `index.html` and `styles.css` | Page layout, labels, themes and responsive styling |
+| `src/app.js` | Picker, pack state, recipe controls, previews and downloads |
+| `src/core.js` | File limits, naming, attachment notes and CSV index |
+| `src/images.js` | Image-header checks, conversion and fictional demo files |
+| `src/recipes.js` | Built-in recipes, import validation and file-count checks |
+| `src/workbench.js` | ZIP-size estimates, duplicates, folders and report data |
+| `src/zip.js` | ZIP writing, UTF-8 filenames, CRC checks and cancellation |
+| `sw.js` | Offline app cache |
+| `test/` | Automated edge cases and the optional Python ZIP reader |
 
-Validation and current limits are recorded in [TESTING.md](TESTING.md). Files are rendered with DOM text nodes, not interpreted as HTML. There are no runtime libraries, external fonts, stock images or generated image assets.
+## Publishing it
 
-## Assistance
+GitHub Pages uses `.github/workflows/pages.yml`. Pushes to `main` run checks, tests and the build before deploying. Set the repository's Pages source to **GitHub Actions**. Pull requests run checks without publishing.
 
-Aarav requested and directed this project; Codex prepared the implementation, tests, design and documentation. This is substantially AI-assisted work. The natural wording and individual visual choices are not a claim that the code was written without AI.
+The build copies only eleven public app files into `dist/` and gives the offline cache a content-based version. Documentation screenshots are kept in the repository and are not included in the app bundle. Relative URLs let the app work under a path such as `/handin-kit/`. Another static host can serve `dist/` over HTTPS too.
 
-The project targets Stardance's [Frictionless mission](https://stardance.hackclub.com/missions/frictionless). That mission requires at least three hours of genuine eligible work as well as a useful working tool. Those hours and any AI eligibility condition have not been verified. No Stardust payout, reviewer approval or mission completion is claimed.
+## Assistance and project status
 
-MIT licensed. The source, setup instructions and app continue to work without a ChatGPT subscription.
+Aarav requested the project and chose its direction and features. Codex wrote the implementation, design, tests and documentation, and performed the recorded browser checks. This is substantially AI-assisted work; no human-only coding claim is made.
+
+The project is entered in Stardance's [Frictionless mission](https://stardance.hackclub.com/missions/frictionless). A working demo, a devlog and tracked time do not by themselves establish reviewer approval. The exact platform observations and outstanding requirements are recorded in [TESTING.md](TESTING.md).
+
+MIT licensed. You can keep using, changing and hosting this source without a ChatGPT subscription.

@@ -1,0 +1,14 @@
+{
+  "name": "handin-kit",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A browser-local workbench for tidy assignment attachments.",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "check": "node scripts/check.mjs",
+    "test": "node --test test/*.test.mjs",
+    "build": "node scripts/build.mjs"
+  }
+}

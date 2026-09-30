@@ -4,7 +4,7 @@ A small browser tool for the attachments you are about to send.
 
 A folder of scans can be awkward to hand in: repeated camera filenames, pages in the wrong order, and images that are much larger than necessary. Hand-in Kit gives you a place to sort that out. Add the files, check their new names, make lighter copies of the scans, and download one organised ZIP.
 
-[Try it here](https://aaravkatiyar55-gif.github.io/handin-kit/) · [Development notes](https://stardance.hackclub.com/projects/66961/devlogs/63161)
+[Try it here](https://aaravkatiyar55-gif.github.io/handin-kit/) · [Development notes](https://stardance.hackclub.com/projects/66961)
 
 ![Hand-in Kit workspace and appearance controls](docs/screenshots/workspace.jpg)
 

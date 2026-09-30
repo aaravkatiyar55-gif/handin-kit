@@ -31,4 +31,10 @@ Safari, Firefox, actual phone hardware, OS-level drag/drop and clipboard image p
 
 Image size targets are best effort. Check small writing and transparency conversion in any real submission. PDF compression, OCR, cloud backup and sending messages are not features of this release.
 
-GitHub deployment and production checks are recorded separately once observed. No Hackatime hours, reviewer approval or Stardust payout are inferred from these tests.
+## Production
+
+The first Actions run reached Pages configuration before the new repository had Pages enabled. After enabling its workflow source, rerunning the failed job succeeded: build and deployment passed in [run 36680864812](https://github.com/aaravkatiyar55-gif/handin-kit/actions/runs/36680864812), source commit `f053608`.
+
+The public root, app module and service worker returned HTTP 200. The live Pages app generated the sample files, reduced them to 292 KB, then restored the original 2.5 MB pack. Copy showed its success status. A production ZIP download without the optional CSV completed at 2,671,487 bytes, observed through browser download events.
+
+Stardance project [66961](https://stardance.hackclub.com/projects/66961) was created under Frictionless with a real app screenshot, source/demo URLs and an explicit AI declaration. It shows zero hours; Post a devlog and Ship are disabled. The tracker list has no Hand-in Kit record. No unrelated time was linked. No Hackatime hours, reviewer approval or Stardust payout are inferred from these tests.

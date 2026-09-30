@@ -135,7 +135,7 @@ GitHub Pages uses `.github/workflows/pages.yml`. Pushes to `main` run checks, te
 
 The build copies only eleven public app files into `dist/` and gives the offline cache a content-based version. Documentation screenshots are kept in the repository and are not included in the app bundle. Relative URLs let the app work under a path such as `/handin-kit/`. Another static host can serve `dist/` over HTTPS too.
 
-## Assistance and project status
+## Assistance
 
 Aarav requested the project and chose its direction and features. Codex wrote the implementation, design, tests and documentation, and performed the recorded browser checks. This is substantially AI-assisted work; no human-only coding claim is made.
 

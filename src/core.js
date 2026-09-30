@@ -54,7 +54,8 @@ export function planFiles(items, options = {}) {
     const stem = cleanStem(item.customName || (options.naming === 'keep'
       ? parts.stem
       : [subject, student, String(index + 1).padStart(2, '0')].filter(Boolean).join('-')));
-    const folder = options.group ? `${category(blob, extension)}/` : '';
+    const customFolder = ['Images', 'Documents', 'Other', 'Work', 'References', 'Extras'].includes(item.folder) ? item.folder : '';
+    const folder = item.folder === 'root' ? '' : customFolder ? `${customFolder}/` : options.group ? `${category(blob, extension)}/` : '';
     const suffix = extension ? `.${extension}` : '';
     let filename = `${stem}${suffix}`;
     let path = `${folder}${filename}`;
